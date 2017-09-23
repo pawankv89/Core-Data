@@ -18,44 +18,26 @@ PKCoreData
 
 
 ```objective-c
-- (void) loadMapView
-{
-    CLLocationCoordinate2D objCoor2D = {.latitude = latitude_UserLocation, .longitude = longitude_UserLocation};
-    
-    //Remove Old OverLay on MAP View
-    for (id overlay in objMapView.overlays) {
-        if([overlay isKindOfClass:[MKCircle class]]) {
-            //Removing past layouts from MapView
-            [objMapView removeOverlay:(MKCircle *)overlay];
-        }
-    }
-    
-    
-    [objMapView setShowsUserLocation:YES];
-    [objMapView setDelegate:self ];
-    MKCircle *circle = [MKCircle circleWithCenterCoordinate:objCoor2D radius:distance];
-    [objMapView addOverlay:circle];
-    
-    //Set Region On MAP View
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(objCoor2D, distance*2,distance*2);
-    [objMapView setRegion:region animated:YES];
-}
-```
- Add MKMapView Delegate 
-
-```objective-c
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay
-{
-    if([overlay isKindOfClass:[MKCircle class]]) {
+//MARK: Add Person Record List
+    @IBAction func adduttonAction(_ sender: Any) {
         
-        MKCircleRenderer *circleView = [[MKCircleRenderer alloc] initWithOverlay:overlay];
-        circleView.strokeColor = [UIColor blueColor];
-        circleView.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.4];
-        circleView.lineWidth = 1.0f;
-        return circleView;
+        if name.text! == "" || age.text! == "" || phone.text! == "" {
+            return
+        }
+        
+        let person = Person()
+        
+        person.name = name.text!
+        person.age = age.text!
+        person.phone = phone.text!
+        person.gender = "Male"
+        person.location = "Noida"
+        person.accountType = "IOS"
+        
+        CoreDataStack.shared.insertPersonRecord(person: person)
+        
+        self.navigationController?.popViewController(animated: true)
     }
-    return nil;
-}
 ```
 
 ## License
