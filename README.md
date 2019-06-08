@@ -1,5 +1,5 @@
 
-PKCoreData
+Core Data
 =========
 
 ## Add user details in coredata
