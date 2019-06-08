@@ -6,10 +6,10 @@ Core Data
 ------------
  Added Some screens here.
  
-[![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_1.png)]
-[![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_2.png)]
-[![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_3.png)]
-[![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_4.png)]
+![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_1.png)
+![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_2.png)
+![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_3.png)
+![](https://github.com/pawankv89/PKCoreData/blob/master/images/screen_4.png)
 
 
 ## Usage
